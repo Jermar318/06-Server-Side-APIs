@@ -1,14 +1,41 @@
-# 06 Server-Side APIs: Weather Dashboard
+### Weather Dashboard
 
-## Your Task
+## Overview
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+The Weather Dashboard is a web application that allows users to view the current and future weather conditions for multiple cities. By leveraging the OpenWeather API, the application provides dynamically updated weather data, including temperature, humidity, wind speed, and weather conditions. Users can search for cities, view detailed weather forecasts, and store their search history for easy access.
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The base URL should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
+## Features
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
+- **Current Weather Conditions**: Displays the city name, date, weather icon, temperature, humidity, and wind speed.
+- **5-Day Forecast**: Provides a 5-day weather forecast with date, weather icon, temperature, wind speed, and humidity.
+- **Search History**: Stores and displays a list of previously searched cities for quick access.
+- **Responsive Design**: Ensures a seamless user experience across different devices and screen sizes.
 
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+## Usage
+
+To use the Weather Dashboard, follow these steps:
+
+1. **Search for a City**: Enter the name of a city in the search bar and click the search button.
+2. **View Weather Data**: The current weather conditions and 5-day forecast for the searched city will be displayed.
+3. **Access Search History**: Click on any city in the search history to view its weather data again.
+
+## API Integration
+
+The application uses the [5 Day Weather Forecast](https://openweathermap.org/forecast5) API from OpenWeather to retrieve weather data. The base URL for the API is:
+
+```
+https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+```
+
+To obtain geographical coordinates (latitude and longitude) from a city name, the application uses the OpenWeather Geocoding API:
+
+```
+http://api.openweathermap.org/geo/1.0/direct?q={city name}&limit=5&appid={API key}
+```
+
+## Local Storage
+
+The application uses `localStorage` to store the search history, ensuring that users can access their previously searched cities even after refreshing the page.
 
 ## User Story
 
@@ -18,85 +45,42 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
 
-## Acceptance Criteria
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+## Technologies Used
 
-## Mock-Up
+- **HTML5**: Provides the structure of the web application.
+- **CSS3**: Styles the application for a visually appealing and responsive design.
+- **JavaScript**: Implements the core functionality, including API calls and DOM manipulation.
+- **jQuery**: Simplifies JavaScript operations and enhances interactivity.
+- **Bootstrap**: Ensures a responsive and mobile-first design.
+- **OpenWeather API**: Supplies the weather data for the application.
 
-The following image shows the web application's appearance and functionality:
+## Installation
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+To run the Weather Dashboard locally, follow these steps:
 
-## Grading Requirements
+1. **Clone the Repository**: Clone the project repository from GitHub to your local machine.
+    ```bash
+    git clone https://github.com/your-username/weather-dashboard.git
+    ```
+2. **Navigate to the Project Directory**: Move into the project directory.
+    ```bash
+    cd weather-dashboard
+    ```
+3. **Open the Index File**: Open `index.html` in your preferred web browser to view the application.
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+## Contributing
 
-This Challenge is graded based on the following criteria: 
+Contributions are welcome! If you have suggestions for improvements or new features, feel free to create an issue or submit a pull request. Please ensure that your contributions align with the project's coding standards and guidelines.
 
-### Technical Acceptance Criteria: 40%
+## License
 
-* Satisfies all of the above acceptance criteria plus the following:
+This project is licensed under the MIT License. See the [MIT License](LICENSE) file for more details.
 
-    * Uses the OpenWeather API to retrieve weather data.
+## Contact
 
-    * Uses `localStorage` to store persistent data.
+For any questions or inquiries, please contact the project maintainer:
 
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+- **Name**: Jermar Smith
+- **Email**: jermarnsmith@gmail.com
+- **GitHub**: [Jermar318](https://github.com/Jermar318)
